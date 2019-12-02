@@ -1,3 +1,4 @@
+var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
@@ -26,8 +27,6 @@ var usersRoutes = require('./routes/users');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -41,6 +40,8 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'));
 
 
 // mount all routes with appropriate base paths
@@ -48,8 +49,8 @@ app.use('/', indexRoutes);
 app.use('/', usersRoutes);
 
 // invalid request, send 404 page
-app.use(function(req, res) {
-  res.status(404).send('Cant find that!');
+app.use(function(req, res, next) {
+  next(createError(404));
 });
 
 module.exports = app;
