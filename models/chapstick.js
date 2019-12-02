@@ -25,7 +25,7 @@ const chapstickSchema = new Schema({
         type: Date,
         default: Date.now()
     },
-    reviews: [reviewSchema],
+    review: [reviewSchema],
     timestamps: true 
 });
 
