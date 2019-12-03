@@ -18,14 +18,15 @@ const chapstickSchema = new Schema({
         type: String,
         required: true
     },
-    collection: {
+    category: {
         type: String,
     },
     dateAcquired: {
         type: Date,
         default: Date.now()
     },
-    review: [reviewSchema],
+    review: [reviewSchema]
+}, {
     timestamps: true 
 });
 
