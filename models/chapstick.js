@@ -21,9 +21,8 @@ const chapstickSchema = new Schema({
     category: {
         type: String,
     },
-    dateAcquired: {
-        type: Date,
-        default: Date.now()
+    season: {
+        type: String
     },
     review: [reviewSchema]
 }, {

@@ -1,5 +1,34 @@
 <%- include('../partials/header') %>
 
+<form id="new-form" action="/chapsticks" method="POST">
+    <label>Brand:</label>
+    <input type="text" name="brand">
+    <label>Flavor:</label>
+    <input type="text" name="flavor">
+    <label>Category:</label>
+    <select name="category">
+        <option value="Classic">Classic</option>
+        <option value="Essential Oils">TH: Essential Oils</option>
+        <option value="Moisture and Tint">TH: Moisture and Tint</option>
+        <option value="Vitamin Enriched">TH: Vitamin Enriched</option>
+        <option value="100% Natural">TH: 100% Natural/option>
+        <option value="3 in 1">TH: 3 in 1</option>
+        <option value="CoQ10">TH: CoQ10</option>
+        <option value="Lip Butter">Lip Butter</option>
+        <option value="Smore's">Smore's</option>
+        <option value="I Heart Summer">I Heart Summer</option>
+        <option value="Tropical Paradise">Tropical Paradise</option>
+        <option value="Holiday">Holiday</option>
+        <option value="Not Available">Not Available</option>
+     </select>
+     <label>Season:</label>
+     <select name="Season">
+        <option value="Summer">Summer</option>
+        <option value="Winter">Winter</option>
+     </select>
+
+     <input type="submit" value"Add Chapstick">
+</form>
 
 
 
