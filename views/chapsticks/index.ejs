@@ -1,12 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Chapsticks</title>
-</head>
-<body>
-                 
-</body>
-</html>
+<%- include('../partials/header') %>
+<table id="list">
+  <tbody>
+    <% chapsticks.forEach(function(c) { %>
+      <tr>
+        <td><%= c.brand %></td>
+        <td><%= c.flavor %></td>
+        <td><%= c.category %></td>
+        <td><%= c.season %></td>
+        <td><%= c.review %></td>
+        <td><a href="/chapsticks/<%= c._id %>">REVIEWS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+  
+<%- include('../partials/footer') %>

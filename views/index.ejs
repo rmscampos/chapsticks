@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+     <title><%= title %></title>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to My Collection</p>
-    <ul class="right">
-        <li>
-          <% if (user) { %>
-              <a href="/logout"><i class="material-icons left"></i>Log Out</a>
-          <% } else { %>
-              <a href="/auth/google"><i class="material-icons left"></i>Login with Google</a>
-          <% } %>
-        </li>
-     </ul>
-     <a href="/new">Go to the Inventory</a>
+    <nav class="nav-wrapper indigo">
+      <ul class="right">
+          <li>
+            <% if (user) { %>
+              <a href="/logout" class="btn-small"><i class="material-icons left"></i>Log Out</a>
+              <% } else { %>
+                <a href="/auth/google" class="btn-small"><i class="material-icons left">group</i>Login with Google</a>
+                <% } %>
+              </li>
+            </ul>
+          </nav>   
+          <h1 class="center-align teal lighten-4"><%= title %></h1>
+          <p class="center-align">Welcome to My Collection</p>
+          <a href="/" class="btn-small pink lighten-2">Add New Chapstick</a>
+         
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+          <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
+        
