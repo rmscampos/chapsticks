@@ -13,20 +13,20 @@ function index(req, res) {
     });
 }
 
-// function show(req, res) {
-//     Chapstick.findById(req.params.id, function(err, chapstick) {
-//         res.render('chapsticks/show', {title: 'Inventory Details', chapstick});
-//     })
-// }
+function show(req, res) {
+    Chapstick.findById(req.params.id, function(err, chapstick) {
+        res.render('chapsticks/show', {title: 'Inventory Details', chapstick});
+    })
+}
 
 function newChapstick(req, res) {
     res.render('chapsticks/new', {title: 'Add Item'});
 }
 
-// function create(req, res) {
-//     const chapstick = new Chapstick(req.body);
-//     chapstick.save(function(err) {
-//         if (err) return res.redirect('/chapsticks/new');
-//         res.redirect(`/chapsticks/${chapstick._id}`);
-//     });
-// }
+function create(req, res) {
+    const chapstick = new Chapstick(req.body);
+    chapstick.save(function(err) {
+        if (err) return res.redirect('/chapsticks/new');
+        res.redirect(`/chapsticks/${chapstick._id}`);
+    });
+}
