@@ -14,6 +14,7 @@
           <li>
             <% if (user) { %>
               <a href="/logout" class="btn-small"><i class="material-icons left"></i>Log Out</a>
+              <a href="chapsticks/" class="btn-small pink lighten-2">Enter</a>
               <% } else { %>
                 <a href="/auth/google" class="btn-small"><i class="material-icons left">group</i>Login with Google</a>
                 <% } %>
@@ -22,7 +23,6 @@
           </nav>   
           <h1 class="center-align teal lighten-4"><%= title %></h1>
           <p class="center-align">Welcome!</p>
-          <a href="chapsticks/" class="btn-small pink lighten-2">Enter</a>
     
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 
