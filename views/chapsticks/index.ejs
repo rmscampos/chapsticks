@@ -2,7 +2,9 @@
 <table id="list">
   <tbody>
     <tr>
-      <% chapsticks.forEach(function(c) { %>
+      <% chapsticks.forEach(function(c) { %>  
+        <form action="/chapsticks/<%= c._id %>?_method=PUT" class="update-form" method="PUT">
+          <td><button type="submit">Edit</button></td></form>
         <form action="/chapsticks/<%= c._id %>?_method=DELETE" class="delete-form" method="POST">
           <td><button type="submit">X</button></td></form>
         <td><%= c.brand %></td>

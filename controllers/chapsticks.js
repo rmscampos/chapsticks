@@ -5,9 +5,24 @@ module.exports = {
     show,
     new: newChapstick,
     create,
-    delete: deleteChapstick
+    delete: deleteChapstick,
+    update
 };
 
+function update(req, res, next) {
+  chapstick.findById(req.params.id, function (err, chapstick) {
+    for (var i = 0; i < chapsticks.length; i++) {
+      if (chapsticks[i]._id == req.body._id) {
+        chapsticks[i].content = req.body.content
+        break; 
+      }
+    }
+    req.user.save(function (err) {
+      if (err) return next(err)
+      res.redirect(`/chapsticks`)
+    });
+  });
+};
 
 function deleteChapstick(req, res) {
     Chapstick.findById(req.params.id, function(err, chapstick) {

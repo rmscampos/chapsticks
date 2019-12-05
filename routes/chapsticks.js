@@ -10,7 +10,7 @@ router.post('/', chapsticksCtrl.create);
 router.get('/new', chapsticksCtrl.new);
 router.get('/:id', chapsticksCtrl.show);
 router.delete('/:id', chapsticksCtrl.delete);
-
+router.put('/:id', chapsticksCtrl.update);
 
 
 function isLoggedIn(req, res, next) {
