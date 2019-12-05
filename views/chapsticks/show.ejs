@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Brand: </div>
+    <div><%= chapstick.brand %></div>
+    <div>Flavor: </div>
+    <div><%= chapstick.flavor %></div>
+    <div>Category: </div>
+    <div><%= chapstick.category %></div>
+    <div>Season: </div>
+    <div><%= chapstick.season %></div>
+    <div>Review: </div>
+    <% chapstick.review.forEach(function(review) { %>
+        <div><%= review.content %>: <%= review.rating %></div>
+    <% }); %>
+</section>
+
+<br><br>
+
+<h2>Reviews</h2>
+<form id="add-review-form" action="/reviews/<%= chapstick._id %>" method="POST">
+    <label>Review: </label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+    </select>
+    <input type="submit" value="Add Review">
+</form>
+<%- include('../partials/footer') %>

@@ -3,7 +3,6 @@ const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
     content: String,
-    //can you do a star rating?
     rating: {type: Number, min: 1, max: 5}
 }, {
     timestamps: true
@@ -22,7 +21,8 @@ const chapstickSchema = new Schema({
         type: String,
     },
     season: {
-        type: String
+        type: String,
+        enum: ['Summer', 'Winter']
     },
     review: [reviewSchema]
 }, {

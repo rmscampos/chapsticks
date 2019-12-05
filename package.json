@@ -19,6 +19,7 @@
     "node": "^13.1.0",
     "nodemon": "^2.0.1",
     "passport": "^0.4.0",
-    "passport-google-oauth": "^2.0.0"
+    "passport-google-oauth": "^2.0.0",
+    "sweetalert2": "^9.4.3"
   }
 }
