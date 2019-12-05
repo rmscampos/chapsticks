@@ -1,17 +1,21 @@
 <%- include('../partials/header') %>
-
 <table id="list">
   <tbody>
-    <% chapsticks.forEach(function(c) { %>
-      <tr>
+    <tr>
+      <% chapsticks.forEach(function(c) { %>
+        <form action="/chapsticks/<%= c._id %>?_method=DELETE" class="delete-form" method="POST">
+          <td><button type="submit">X</button></td></form>
         <td><%= c.brand %></td>
         <td><%= c.flavor %></td>
         <td><%= c.category %></td>
         <td><%= c.season %></td>
         <td><a href="/chapsticks/<%= c._id %>">REVIEWS</a></td>
+        
+       
       </tr>
       <% }); %>
-    </tbody>
+
+    </body>
   </table>
-  
+
 <%- include('../partials/footer') %>

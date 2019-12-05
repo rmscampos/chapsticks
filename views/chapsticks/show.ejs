@@ -12,9 +12,10 @@
     <div>Review: </div>
     <% chapstick.review.forEach(function(review) { %>
         <div><%= review.content %>: <%= review.rating %></div>
-    <% }); %>
+        <% }); %>
+    <div><form id="delete-review" action="/reviews/<%= chapstick._id %>?_method=DELETE" method="POST"><input type="submit" value="Delete Review"></form></div>
 </section>
-
+    
 <br><br>
 
 <h2>Reviews</h2>
@@ -31,4 +32,5 @@
     </select>
     <input type="submit" value="Add Review">
 </form>
+
 <%- include('../partials/footer') %>

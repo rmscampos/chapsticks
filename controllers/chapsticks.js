@@ -4,8 +4,18 @@ module.exports = {
     index,
     show,
     new: newChapstick,
-    create
+    create,
+    delete: deleteChapstick
 };
+
+
+function deleteChapstick(req, res) {
+    Chapstick.findById(req.params.id, function(err, chapstick) {
+        chapstick.remove();
+    });
+    res.redirect('/chapsticks/');
+  }
+  
 
 function index(req, res) {
     Chapstick.find({}, function(err, chapsticks) {
@@ -30,4 +40,3 @@ function create(req, res) {
         res.redirect("/chapsticks/");
     });
 }
-

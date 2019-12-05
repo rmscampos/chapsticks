@@ -1,8 +1,11 @@
-const User = require('../models/user')
+const User = require('../models/user');
+const Chapstick = require('../models/chapstick')
+
 
 module.exports = {
     index
 };
+
 
 function index(req, res, next) {
       res.render('users/index', {
