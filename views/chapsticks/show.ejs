@@ -1,19 +1,33 @@
 <%- include('../partials/header') %>
 
+<form id="form" class="hide" action="/chapsticks/:id<%= chapstick._id %>?_method=PUT" method="POST">
+    <div class="form-group container mt-4">
+        <label for="exampleFormControlInput1">Brand:</label>
+        <textarea class="form-control" name="title" id="exampleFormControlTextarea1" required="true"
+            rows="1"><%= chapstick.brand %></textarea>
+    </div>
+    <div class="form-group container mb-5 pb-5">
+        <label for="exampleFormControlTextarea1">Flavor:</label>
+        <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3"
+            required="true"><%= chapstick.flavor %></textarea>
+        <button type="submit" class="btn btn-outline-primary float-right mt-2">Update Item</button>
+    </div>
+</form>
+
 <section id="show-page">
-    <div>Brand: </div>
     <div><%= chapstick.brand %></div>
-    <div>Flavor: </div>
     <div><%= chapstick.flavor %></div>
-    <div>Category: </div>
     <div><%= chapstick.category %></div>
-    <div>Season: </div>
     <div><%= chapstick.season %></div>
     <div>Review: </div>
+    <% if (chapstick.review.length > 0) { %>
     <% chapstick.review.forEach(function(review) { %>
         <div><%= review.content %>: <%= review.rating %></div>
         <% }); %>
     <div><form id="delete-review" action="/reviews/<%= chapstick._id %>?_method=DELETE" method="POST"><input type="submit" value="Delete Review"></form></div>
+    <% } else { %>
+        <h3><%= "There are no reviews yet!" %></h3>
+        <% } %>
 </section>
     
 <br><br>

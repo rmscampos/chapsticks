@@ -9,20 +9,23 @@ module.exports = {
     update
 };
 
-function update(req, res, next) {
-  chapstick.findById(req.params.id, function (err, chapstick) {
-    for (var i = 0; i < chapsticks.length; i++) {
-      if (chapsticks[i]._id == req.body._id) {
-        chapsticks[i].content = req.body.content
-        break; 
-      }
-    }
-    req.user.save(function (err) {
-      if (err) return next(err)
-      res.redirect(`/chapsticks`)
-    });
-  });
-};
+function update(req, res, next){
+    Chapstick.findById(req.params.id, function(err, chapstick) {
+        chapsticks.forEach(function(c){
+             if(c._id == req.params.id){
+                c.brand = req.body.brand;
+                c.flavor = req.body.flavor;
+            }
+        })
+        chapsticks.save(function(err){
+            if(err)return next(err);
+            res.redirect('/chapsticks/show');
+        })
+    })
+}
+
+
+   
 
 function deleteChapstick(req, res) {
     Chapstick.findById(req.params.id, function(err, chapstick) {
@@ -34,6 +37,7 @@ function deleteChapstick(req, res) {
 
 function index(req, res) {
     Chapstick.find({}, function(err, chapsticks) {
+        //put sort here
         res.render('chapsticks/index', { title: 'Collection', chapsticks })
     });
 }
@@ -49,9 +53,11 @@ function newChapstick(req, res) {
 }
 
 function create(req, res) {
+    console.log(req.body);
     const chapstick = new Chapstick(req.body);
     chapstick.save(function(err) {
-        if (err) return res.redirect('/chapsticks/new');
+        
+        if (err) return res.redirect('/chapsticks/');
         res.redirect("/chapsticks/");
     });
 }

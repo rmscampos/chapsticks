@@ -19,10 +19,11 @@ const chapstickSchema = new Schema({
     },
     category: {
         type: String,
+        enum: ["Classic", "Essential Oils", "Moisture and Tint", "Vitamin Enriched", "100% Natural", "3 in 1", "CoQ10", "Lip Butter", "S'mores", "I Heart Summer", "Tropical Paradise", "Holiday", "Not Available"]
     },
     season: {
         type: String,
-        enum: ['Summer', 'Winter']
+        enum: ["Summer", "Winter"]
     },
     review: [reviewSchema]
 }, {

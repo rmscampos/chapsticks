@@ -4,13 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+   <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <title><%= title %></title>
 </head>
 <body>
   <nav>
-    <a href="/chapsticks/new" <%- title === 'Add Chapstick' ? 'class="active"' : '' %>>ADD CHAPSTICK</a>
-    <a href="/chapsticks" <%- title === 'All Chapsticks' ? 'class="active"' : '' %>>ALL CHAPSTICKS</a>
+    <a href="/chapsticks/new" <%- title === 'Add Item' ? 'class="active"' : '' %>>ADD ITEM</a>
+    <a href="/chapsticks" <%- title === 'Collection' ? 'class="active"' : '' %>>COLLECTION</a>
   </nav>
   <main>
     <h1><%= title %></h1>
