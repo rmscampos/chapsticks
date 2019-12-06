@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<!-- stuff we want to show on click of update -->
 <form id="form" class="hide" action="/chapsticks/:id<%= chapstick._id %>?_method=PUT" method="POST">
     <div class="form-group container mt-4">
         <label for="exampleFormControlInput1">Brand:</label>
@@ -14,6 +14,8 @@
     </div>
 </form>
 
+<!-- stuff we want to hide on click of up -->
+<button id="edit" type="submit" >Update Item</button>
 <section id="show-page">
     <div><%= chapstick.brand %></div>
     <div><%= chapstick.flavor %></div>
@@ -37,7 +39,7 @@
     <label>Review: </label>
     <textarea name="content"></textarea>
     <label>Rating:</label>
-    <select name="rating">
+    <select class="browser-default" name="rating">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>

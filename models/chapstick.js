@@ -25,6 +25,7 @@ const chapstickSchema = new Schema({
         type: String,
         enum: ["Summer", "Winter"]
     },
+    userId: String,
     review: [reviewSchema]
 }, {
     timestamps: true 

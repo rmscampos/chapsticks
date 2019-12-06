@@ -4,11 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-   <!--Import Google Icon Font-->
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+  <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script defer src="/javascripts/edit-post.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script defer src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
@@ -16,9 +17,12 @@
   <title><%= title %></title>
 </head>
 <body>
+  <div class="navbar-fixed">
   <nav>
+    <div class="nav-wrapper">
     <a href="/chapsticks/new" <%- title === 'Add Item' ? 'class="active"' : '' %>>ADD ITEM</a>
-    <a href="/chapsticks" <%- title === 'Collection' ? 'class="active"' : '' %>>COLLECTION</a>
+    <a class="right" href="/chapsticks" <%- title === 'Collection' ? 'class="active"' : '' %>>COLLECTION</a>
   </nav>
+  </div>
   <main>
     <h1><%= title %></h1>

@@ -1,5 +1,5 @@
 let edit = document.getElementById('edit')
-let show = document.getElementById('show')
+let show = document.getElementById('show-page')
 // let textArea = document.getElementById('input')
 let form = document.getElementById('form')
 

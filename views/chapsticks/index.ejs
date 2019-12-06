@@ -2,10 +2,10 @@
 <table id="list">
   <thead>
     <tr>
-      <td>Brand</td>
-      <td>Flavor</td>
-      <td>Category</td>
-      <td>Season</td>
+      <td class="pink-text text-darken-3">Brand</td>
+      <td class="pink-text text-darken-3">Flavor</td>
+      <td class="pink-text text-darken-3">Category</td>
+      <td class="pink-text text-darken-3">Season</td>
     </tr>
   </thead>
 <tbody>
@@ -16,8 +16,8 @@
         <td><%= c.flavor %></td>
         <td><%= c.category %></td>
         <td><%= c.season %></td>
-        <td><a href="/chapsticks/<%= c._id %>">REVIEWS</a></td>
-        <td><a href="/chapsticks/<%= c._id %>">Edit</a></td>
+        <td><a class="deep-purple-text text-lighten-2" href="/chapsticks/<%= c._id %>">REVIEWS</a></td>
+        <td><a class="amber-text text-darken-3" href="/chapsticks/<%= c._id %>">Edit</a></td>
         <form action="/chapsticks/<%= c._id %>?_method=DELETE" class="delete-form" method="POST">
           <td><button type="submit">X</button></td></form>
       </tr>

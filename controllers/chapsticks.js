@@ -10,17 +10,13 @@ module.exports = {
 };
 
 function update(req, res, next){
-    Chapstick.findById(req.params.id, function(err, chapstick) {
-        chapsticks.forEach(function(c){
-             if(c._id == req.params.id){
-                c.brand = req.body.brand;
-                c.flavor = req.body.flavor;
-            }
-        })
-        chapsticks.save(function(err){
+    console.log('CONNECTED TO UPDATE')
+    Chapstick.findOneAndUpdate(req.params.id, req.body, {new:true}, function(err, chapstick) {
+        console.log(req.params.id, req.body)
+        chapstick.save(function(err){
             if(err)return next(err);
             res.redirect('/chapsticks/show');
-        })
+        })      
     })
 }
 
@@ -54,6 +50,7 @@ function newChapstick(req, res) {
 
 function create(req, res) {
     console.log(req.body);
+    req.body.userId = req.user._id.toString()
     const chapstick = new Chapstick(req.body);
     chapstick.save(function(err) {
         
