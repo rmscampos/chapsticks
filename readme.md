@@ -33,18 +33,22 @@ AAU I will be able to navigate to the main collection page or to the landing pag
 AAU I will be able to log out of my web app 
 
 ## Technology
+- HTML/CSS/JS
 - Node.js/Express JS Framework
 - MongoDB
 - Mongoose ODM
 - Google OAuth
 
-## Stretch Goals
+## Getting Started
 
-## Data Structure
-    **Layout**
+https://chapsticks.herokuapp.com
 
-    **Collection**
+## Next Steps
 
-    **Forms**
+- Be able to update and delete reviews
+- Be able to sort by season
+- Make ratings into stars instead of integers
+- Add an alert when forms are not filled out completely
+- Link custom 404 page
+- Add user icon to nav bar that shows the user that is logged in
 
-    **Reviews**
